@@ -3,6 +3,7 @@ from vector.vector import PineconeConn
 from langchain_community.document_loaders import CSVLoader
 from langchain_pinecone import PineconeVectorStore
 
+'''
 def read_test_csv_file(filename):
 	lang_csv_data = CSVLoader(file_path=filename,
 					autodetect_encoding=True,
@@ -19,10 +20,12 @@ def read_test_csv_file(filename):
 	return docs
 	
 print(read_test_csv_file('test_logs.csv'))
-
+'''
 def insert_data_pinecone():
 	print("This function connects to Pinecone through Langchain...")
 	try:
 		pine_conn = PineconeConn().get_pinecone_connection()
 	except Exception as e:
-		print(
+		print(f"There was an exception while connecting to Pinecone with {str(e)}")
+		
+print(insert_data_pinecone())
