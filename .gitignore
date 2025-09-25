@@ -1,0 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+test_automate_venv/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environment variables
+.env
+
+# IDE / Editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS / Linux files
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Coverage / test
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+htmlcov/
+
+# Other
+*.bak
+*.tmp
+
