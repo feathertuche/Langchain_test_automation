@@ -1,11 +1,9 @@
 import os
-
 from dotenv import load_dotenv
 from pinecone import Pinecone, PineconeException
-from sentence_transformers import SentenceTransformer
-
+# from sentence_transformers import SentenceTransformer
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from helper_functions import api_log
-
 from .ConnInterface import VectorStoreConnector
 
 load_dotenv()
@@ -32,7 +30,8 @@ class PineconeConnector(VectorStoreConnector):
             raise e
 
         try:
-            embedder = SentenceTransformer(self.embed_model)
+            #embedder = SentenceTransformer(self.embed_model)
+            embedder = HuggingFaceEmbeddings(model_name=self.embed_model)
             api_log(msg=f"Embedding model '{self.embed_model}' loaded successfully.")
         except ValueError as ve:
             api_log(msg=f"Embedding model loading failed: {str(ve)}")
